@@ -1,0 +1,601 @@
+-------------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/vidhi/college baby/sem 6/Topics in EconRes/FinalPaperMaterial/V2_EDA.log
+  log type:  text
+ opened on:  20 Mar 2026, 10:04:53
+
+. 
+. 
+. **Data Exploration Breakdown**
+. 
+. **Nrega.dta**
+. use "Data for Political Competition Over Life and Death - Social Provision and Infant Mortality in India/ReplicationPackage/D
+> atafiles/nrega.dta", clear
+
+. 
+. ****Basic structure******
+. describe
+
+Contains data from Data for Political Competition Over Life and Death - Social Provision and Infant Mortality in India/Replicat
+> ionPackage/Datafiles/nrega.dta
+ Observations:       451,231                  
+    Variables:            55                  24 Jun 2024 10:52
+-------------------------------------------------------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------------------------------------------
+state           float   %10.0g                State identifier
+district2011    int     %8.0g                 District identifier (census 2011)
+gp_id           float   %9.0g                 Gram Panchayat identifier
+year            float   %9.0g                 Year
+pc_id_pre       float   %9.0g                 Pre-delim PC identifier (unique)
+pc_id_post      float   %9.0g                 Post-delim PC identifier (unique)
+change_pc       float   %9.0g                 Indicates the person changed constituency due to the delimitation
+matched_pc_post float   %9.0g                 Corresponding post-delim PC
+postbank        float   %9.0g                 NREGA salary disbursements
+sPostbank       float   %9.0g                 Standardized values of postbank
+demand          float   %9.0g                 NREGA registered demand
+sDemand         float   %9.0g                 Standardized values of demand
+gini_pre66_past float   %9.0g                 Ineq: Gini coeff in corresponding pre-delim PC (NSS 2009-10)
+meanlog_pre66~t float   %9.0g                 Ineq: Mean log deviation in corresponding pre-delim PC (NSS 2009-10)
+theil_pre66_p~t float   %9.0g                 Ineq: Theil index in corresponding pre-delim PC (NSS 2009-10)
+palma_pre66_p~t float   %9.0g                 Ineq: Palma ratio in corresponding pre-delim PC (NSS 2009-10)
+fragmentation~t float   %9.0g                 Elections 2004 in corresponding pre-delim PC: Fragmentation index
+min_vote_shar~t float   %9.0g                 Elections 2004: One minus the vote share of the winning party
+min_margin_20~t float   %9.0g                 Elections 2004: One minus the margin of victory
+effective_par~t float   %9.0g                 Elections 2004 in corresponding pre-delim PC: ENOP
+reservation_p~t str3    %9s                   Elections 2009: Reservation status
+party_2009      str6    %9s                   Elections 2009: Winning party
+log_mean_pre6~t float   %9.0g                 Log average expenditures in corresponding pre-delim PC (NSS 2009-10)
+pc_dist         float   %9.0g                 FE: Pre-delim PC * district (2011 districts)
+cell_share_sc   float   %9.0g                 Share of scheduled caste in district * pre-delim PC * post-delim PC (2011 distri
+cell_share_st   float   %9.0g                 Share of scheduled tribe in district * pre-delim PC * post-delim PC (2011 distri
+cell_share_l6   float   %9.0g                 Share of children below 6 in district * pre-delim PC * post-delim PC (2011 distr
+cell_share_lit  float   %9.0g                 Share of literate villagers in district * pre-delim PC * post-delim PC (2011 dis
+cell_primary    float   %9.0g                 Share of villages with a primary school in district * pre-delim PC * post-delim
+cell_phc        float   %9.0g                 Share of villages with a primary health centre in district * pre-delim PC * post
+cell_phs        float   %9.0g                 Share of villages with a primary health sub-centre in district * pre-delim PC *
+cell_tap        float   %9.0g                 Share of villages with tap water in district * pre-delim PC * post-delim PC (201
+cell_power      float   %9.0g                 Share of villages with electricity in district * pre-delim PC * post-delim PC (2
+cell_paved      float   %9.0g                 Share of villages connected with a paved road in district * pre-delim PC * post-
+primary_past    float   %9.0g                 Share of villages with a primary school in corresponding pre-delim PC (Cenusus 2
+phc_past        float   %9.0g                 Share of villages with a primary health centre in corresponding pre-delim PC (Ce
+phs_past        float   %9.0g                 Share of villages with a primary health sub-centre in corresponding pre-delim PC
+tap_past        float   %9.0g                 Share of villages with tap water in corresponding pre-delim PC (Cenusus 2001)
+power_past      float   %9.0g                 Share of villages with electricity in corresponding pre-delim PC (Cenusus 2001)
+paved_past      float   %9.0g                 Share of villages connected with a paved road in corresponding pre-delim PC (Cen
+share_sc_past   float   %9.0g                 Share of scheduled caste in corresponding pre-delim PC (Cenusus 2001)
+share_st_past   float   %9.0g                 Share of scheduled tribe in corresponding pre-delim PC (Cenusus 2001)
+share_l6_past   float   %9.0g                 Share of children below 6 in corresponding pre-delim PC (Cenusus 2001)
+population_past float   %9.0g                 Total population in corresponding pre-delim PC (Cenusus 2001)
+urbanization_~t float   %9.0g                 Urbanization rate in corresponding pre-delim PC (Cenusus 2001)
+share_lit_past  float   %9.0g                 Share of literate villagers in corresponding pre-delim PC (Cenusus 2001)
+religion_frac~t float   %9.0g                 Religious fractionalization in corresponding pre-delim PC (NSS 2009-10)
+caste_frac_past float   %9.0g                 Caste fractionalization in corresponding pre-delim PC (NSS 2009-10)
+share_blocksp~t float   %9.0g                 Population share living in a split block in Pre-delim PC * Post-delim PC * distr
+distance_km     float   %9.0g                 Distance to nearest constituency border
+change_ac       float   %9.0g                 Indicates the person changed AC constituency due to the delimitation
+split_block     float   %9.0g                 Indicates a split block
+poverty_pre66~t float   %9.0g                 Poverty rate in corresponding pre-delim PC (NSS 2009-10)
+pc_dist_y       float   %9.0g                 group(pc_dist year)
+mean_share_acW  float   %9.0g                 Population share that changed AC in Pre-delim PC * Post-delim PC * district
+-------------------------------------------------------------------------------------------------------------------------------
+Sorted by: 
+
+. 
+. tab year
+
+       Year |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       2011 |    150,413       33.33       33.33
+       2012 |    150,411       33.33       66.67
+       2013 |    150,407       33.33      100.00
+------------+-----------------------------------
+      Total |    451,231      100.00
+
+. 
+. tab state
+
+      State |
+ identifier |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          3 |     26,773        5.93        5.93
+          6 |     13,986        3.10        9.03
+          9 |    108,534       24.05       33.09
+         10 |     19,071        4.23       37.31
+         19 |      9,444        2.09       39.41
+         21 |     18,015        3.99       43.40
+         22 |     27,048        5.99       49.39
+         23 |     62,808       13.92       63.31
+         24 |     37,047        8.21       71.52
+         27 |     59,088       13.09       84.62
+         28 |     25,308        5.61       90.22
+         29 |     15,441        3.42       93.65
+         32 |      1,347        0.30       93.95
+         33 |     27,321        6.05      100.00
+------------+-----------------------------------
+      Total |    451,231      100.00
+
+. 
+. //Unique GPs
+. egen gp_unique = tag(gp_id)
+
+. count if gp_unique == 1
+  150,413
+
+. 
+. //Unique pre vs post delimitation constituencies
+. * Count unique pre-delimitation constituencies
+. egen pre_tag = tag(pc_id_pre)
+
+. count if pre_tag == 1
+  429
+
+. 
+. * Count unique post-delimitation constituencies
+. egen post_tag = tag(pc_id_post)
+
+. count if post_tag == 1
+  411
+
+. 
+. * Average number of GPs per post-delimitation constituency
+. * First count GPs per constituency (using one year only to avoid triple counting)
+. bysort pc_id_post year: gen gp_count = _N
+
+. bysort pc_id_post: keep if year == 2011
+(300,818 observations deleted)
+
+. summarize gp_count, detail
+
+                          gp_count
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%           76              2
+ 5%          159              2
+10%          199              2       Obs             150,413
+25%          353              2       Sum of wgt.     150,413
+
+50%          534                      Mean           538.4773
+                        Largest       Std. dev.      243.5837
+75%          688           1160
+90%          865           1160       Variance       59333.04
+95%          960           1160       Skewness       .1703623
+99%         1061           1160       Kurtosis       2.501096
+
+. 
+. **Redistricting variable**
+. tab change_pc //share of redistricted GPs: 26.92% -> approx 1/4th of rural population --> shows amount of identifying variati
+> on available
+
+  Indicates |
+ the person |
+    changed |
+constituenc |
+   y due to |
+        the |
+delimitatio |
+          n |      Freq.     Percent        Cum.
+------------+-----------------------------------
+          0 |    109,920       73.08       73.08
+          1 |     40,493       26.92      100.00
+------------+-----------------------------------
+      Total |    150,413      100.00
+
+. 
+. 
+. **Political competition variable (fragmentation_2004_past)**
+. summarize fragmentation_2004_past, detail //report mean (should be around 0.62), standard deviation, min, max, and 25th/75th 
+> percentiles
+
+        Elections 2004 in corresponding pre-delim PC:
+                     Fragmentation index
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%      .510056       .4378963
+ 5%     .5338582       .4378963
+10%     .5431795       .4378963       Obs             150,413
+25%     .5866154       .4378963       Sum of wgt.     150,413
+
+50%     .6577752                      Mean           .6602052
+                        Largest       Std. dev.      .0851132
+75%     .7330768       .8097307
+90%     .7747545       .8097307       Variance       .0072443
+95%     .7933491       .8097307       Skewness      -.0230462
+99%     .8097307       .8097307       Kurtosis       1.922432
+
+. 
+. histogram fragmentation_2004_past //describe the shape of the distribution, noting whether it is roughly bell-shaped or skewe
+> d
+(bin=51, start=.43789625, width=.00729087)
+
+. //slightly skewed to left
+. 
+. 
+. count if fragmentation_2004_past == . //report how many GPs lack a competition measure and whether this is a concern
+  0
+
+. 
+. *SC/ST population share controls*
+. summarize share_sc_past share_st_past, detail //report mean and standard deviation of SC and ST population shares at the cons
+> tituency level
+
+          Share of scheduled caste in corresponding
+                 pre-delim PC (Cenusus 2001)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%     .0223584        .020348
+ 5%       .04245        .020348
+10%     .0635541        .020348       Obs             150,413
+25%     .1121791        .020348       Sum of wgt.     150,413
+
+50%     .1822015                      Mean           .1822686
+                        Largest       Std. dev.      .0889492
+75%     .2406056       .5522195
+90%     .3058203       .5522195       Variance        .007912
+95%     .3403148       .5522195       Skewness        .356189
+99%     .4039312       .5522195       Kurtosis       2.825353
+
+          Share of scheduled tribe in corresponding
+                 pre-delim PC (Cenusus 2001)
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            0              0
+ 5%            0              0
+10%     1.70e-06              0       Obs             150,413
+25%     .0001931              0       Sum of wgt.     150,413
+
+50%     .0165759                      Mean           .1137134
+                        Largest       Std. dev.      .1903072
+75%     .1434242       .8238454
+90%     .4284109       .8238454       Variance       .0362168
+95%     .5820993       .8238454       Skewness       1.981112
+99%     .7705129       .8238454       Kurtosis       5.993447
+
+. summarize cell_share_sc cell_share_st, detail //report the same at the cell level and compare — note whether cell-level varia
+> tion is wider than constituency-level, which would indicate meaningful within-constituency heterogeneity
+
+      Share of scheduled caste in district * pre-delim
+               PC * post-delim PC (2011 distri
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%     .0134667              0
+ 5%     .0402375              0
+10%     .0617365              0       Obs             150,413
+25%      .112152              0       Sum of wgt.     150,413
+
+50%     .1828065                      Mean           .1827297
+                        Largest       Std. dev.      .0943184
+75%     .2380147       .7693339
+90%     .3072192       .7693339       Variance        .008896
+95%     .3477189       .7808219       Skewness       .4908212
+99%     .4472656       .9092572       Kurtosis       3.279817
+
+      Share of scheduled tribe in district * pre-delim
+               PC * post-delim PC (2011 distri
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            0              0
+ 5%            0              0
+10%            0              0       Obs             150,413
+25%     .0001315              0       Sum of wgt.     150,413
+
+50%     .0135453                      Mean           .1156194
+                        Largest       Std. dev.      .2017094
+75%     .1416751        .981378
+90%     .4289584        .981378       Variance       .0406867
+95%     .6167425       .9993106       Skewness       2.104427
+99%     .8600666              1       Kurtosis       6.690599
+
+. 
+. 
+. *Existing outcome variables (postbank and demand)*
+. summarize postbank, detail //report mean, standard deviation, and note extreme skewness; the mean should be around 775,559 ru
+> pees per the original paper
+
+                 NREGA salary disbursements
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            0              0
+ 5%            0              0
+10%            0              0       Obs             150,413
+25%         4907              0       Sum of wgt.     150,413
+
+50%       254760                      Mean           660139.1
+                        Largest       Std. dev.       1512502
+75%       742920       4.52e+07
+90%      1554480       4.70e+07       Variance       2.29e+12
+95%      2405274       5.11e+07       Skewness       11.33601
+99%      6782713       1.20e+08       Kurtosis       379.2907
+
+. // hints at extreme skewness to the right as difference between standard deviation and mean is a lot
+. 
+. count if postbank == 0 //report what share of GP-years have zero disbursements, as this is a data quality issue worth flaggin
+> g
+  34,984
+
+. 
+. summarize demand, detail //report the distribution of registered demand for work; this will be your placebo outcome variable
+
+                   NREGA registered demand
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            0              0
+ 5%            0              0
+10%            0              0       Obs             150,413
+25%           31              0       Sum of wgt.     150,413
+
+50%          147                      Mean           324.3463
+                        Largest       Std. dev.      556.6612
+75%          398          10659
+90%          812          10767       Variance       309871.7
+95%         1154          12992       Skewness        5.24564
+99%         2759          12994       Kurtosis       47.89618
+
+. 
+. 
+. 
+. **District-Level MGNREGA Data**
+. clear all
+
+. 
+. import delimited using "MGNREGA Data/ZIP/6026/6026_source_data.csv", clear
+(encoding automatically selected: ISO-8859-1)
+(44 vars, 6,368 obs)
+
+. 
+. 
+. *Basic structure*
+. **Report total number of observations, number of unique districts, number of states covered, and years available
+. d
+
+Contains data
+ Observations:         6,368                  
+    Variables:            44                  
+-------------------------------------------------------------------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------------------------------------------------------------------
+srcyear         str7    %9s                   srcYear
+srcstatename    str20   %20s                  srcStateName
+srcdistrictname str37   %37s                  srcDistrictName
+householdstha~d long    %12.0g                Households that applied for a Job Card
+jobcardsissued  long    %12.0g                Job Cards issued
+jobcardsissue~e long    %12.0g                Job Cards issued for Scheduled Caste
+jobcardsissue~s long    %12.0g                Job Cards issued for Scheduled Tribes
+jobcardsissue~i long    %12.0g                Job Cards issued for non Scheduled Tribes or Scheduled Caste
+househo~dedwork long    %12.0g                Households that demanded work
+personswhodem~k long    %12.0g                Persons who demanded work
+househo~tedwork long    %12.0g                Households that were allotted work
+personsthatwe~k long    %12.0g                Persons that were allotted work
+musterrollsfi~d long    %12.0g                Muster Rolls filled
+householdstha~a long    %12.0g                Households that worked under Mahatma Gandhi National Rural Employment Guarantee
+personsthatwo~n long    %12.0g                Persons that worked under Mahatma Gandhi National Rural Employment Guarantee Act
+householdstha~i long    %12.0g                Households that reached a 100 day limit
+personswithdi~y int     %8.0g                 Persons with disability
+nonscheduledt~s long    %12.0g                Non Scheduled Tribes or Scheduled Caste households that worked
+totalpersonda~u long    %12.0g                Total Person days worked by non Scheduled Tribes or Scheduled Caste persons
+scheduledcast~k long    %12.0g                Scheduled Caste households that worked
+totalpersonda~a long    %12.0g                Total Person days worked Scheduled Caste persons
+scheduledtrib~k long    %12.0g                Scheduled Tribe households that worked
+totalpersonda~r long    %12.0g                Total Person days worked Scheduled Tribe persons
+householdstha~m long    %12.0g                Households that worked on land reform or Indira Awas Yojana
+totalpersonda~n long    %12.0g                Total Person days worked by women
+totalpersondays long    %12.0g                Total Person days
+scheduledcast~c long    %8.0g                 Scheduled Caste households that reached a 100 Day Limit
+scheduledtrib~c long    %12.0g                Scheduled Tribe households that reached a 100 Day Limit
+labourexpendi~b float   %9.0g                 Labour expenditure that has been disbursed
+materialexpen~i float   %9.0g                 Material expenditure that has been disbursed
+labourexpendi~n float   %9.0g                 Labour expenditure both disbursed and pending
+materialexpen~d float   %9.0g                 Material expenditure both disbursed and pending
+amountsanctio~d float   %9.0g                 Amount sanctioned
+worksundermah~r long    %12.0g                Works under Mahatma Gandhi National Rural Employment Guarantee Act (MGNREGA)
+totalbankacco~s long    %12.0g                Total bank accounts
+individualban~s long    %12.0g                Individual bank accounts
+jointbankacco~s long    %12.0g                Joint bank accounts
+amountdisburs~s double  %10.0g                Amount disbursed to bank accounts
+postofficeacc~s long    %12.0g                Post office accounts
+individualpos~s long    %12.0g                Individual post office accounts
+jointpostoffi~s long    %12.0g                Joint post office accounts
+amountdisburs~u double  %12.0g                Amount disbursed to post office accounts
+year            str32   %32s                  Year
+yearcode        int     %8.0g                 YearCode
+-------------------------------------------------------------------------------------------------------------------------------
+Sorted by: 
+     Note: Dataset has changed since last saved.
+
+. duplicates report srcyear srcstatename srcdistrictname
+
+Duplicates in terms of srcyear srcstatename srcdistrictname
+
+--------------------------------------
+   Copies | Observations       Surplus
+----------+---------------------------
+        1 |         6368             0
+--------------------------------------
+
+. distinct srcstatename
+
+              |        Observations
+              |      total   distinct
+--------------+----------------------
+ srcstatename |       6368         33
+
+. 
+. tab srcyear //report how observations are distributed across years
+
+    srcYear |      Freq.     Percent        Cum.
+------------+-----------------------------------
+    2011-12 |        637       10.00       10.00
+    2012-13 |        637       10.00       20.01
+    2013-14 |        637       10.00       30.01
+    2014-15 |        637       10.00       40.01
+    2015-16 |        637       10.00       50.02
+    2016-17 |        637       10.00       60.02
+    2017-18 |        637       10.00       70.02
+    2018-19 |        637       10.00       80.03
+    2019-20 |        637       10.00       90.03
+    2020-21 |        635        9.97      100.00
+------------+-----------------------------------
+      Total |      6,368      100.00
+
+. tab srcstatename //report state coverage and note whether it matches the 15 states in Nrega.dta or is broader/narrower
+
+        srcStateName |      Freq.     Percent        Cum.
+---------------------+-----------------------------------
+ ANDAMAN AND NICOBAR |         30        0.47        0.47
+      ANDHRA PRADESH |        130        2.04        2.51
+   ARUNACHAL PRADESH |        160        2.51        5.03
+               ASSAM |        270        4.24        9.27
+               BIHAR |        380        5.97       15.23
+        CHHATTISGARH |        270        4.24       19.47
+DADRA & NAGAR HAVELI |         10        0.16       19.63
+         DAMAN & DIU |         20        0.31       19.94
+                 GOA |         20        0.31       20.26
+             GUJARAT |        280        4.40       24.65
+             HARYANA |        210        3.30       27.95
+    HIMACHAL PRADESH |        120        1.88       29.84
+   JAMMU AND KASHMIR |        218        3.42       33.26
+           JHARKHAND |        240        3.77       37.03
+           KARNATAKA |        300        4.71       41.74
+              KERALA |        140        2.20       43.94
+         LAKSHADWEEP |         10        0.16       44.10
+      MADHYA PRADESH |        510        8.01       52.10
+         MAHARASHTRA |        330        5.18       57.29
+             MANIPUR |         90        1.41       58.70
+           MEGHALAYA |         70        1.10       59.80
+             MIZORAM |         80        1.26       61.06
+            NAGALAND |        110        1.73       62.78
+              ODISHA |        300        4.71       67.49
+          PUDUCHERRY |         20        0.31       67.81
+              PUNJAB |        220        3.45       71.26
+           RAJASTHAN |        330        5.18       76.44
+              SIKKIM |         40        0.63       77.07
+          TAMIL NADU |        310        4.87       81.94
+             TRIPURA |         80        1.26       83.20
+       UTTAR PRADESH |        750       11.78       94.97
+         UTTARAKHAND |        130        2.04       97.02
+         WEST BENGAL |        190        2.98      100.00
+---------------------+-----------------------------------
+               Total |      6,368      100.00
+
+. 
+. *Constructing and inspecting the outcome variable*
+. //Generate SC/ST employment share: 
+. gen scst_share = (totalpersondaysworkedscheduledca + totalpersondaysworkedscheduledtr) / totalpersondays
+(115 missing values generated)
+
+. 
+. summarize scst_share, detail //report mean, standard deviation, min and max
+
+                         scst_share
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%      .019031              0
+ 5%     .0719682              0
+10%     .1270406              0       Obs               6,253
+25%     .2251372              0       Sum of wgt.       6,253
+
+50%     .3512861                      Mean           .4184487
+                        Largest       Std. dev.      .2641927
+75%     .5518422              1
+90%      .872508              1       Variance       .0697978
+95%      .982963              1       Skewness        .768949
+99%     .9993205              1       Kurtosis        2.68392
+
+. count if scst_share > 1 | scst_share < 0 //check for impossible values indicating data errors, report how many and whether yo
+> u drop them
+  115
+
+.  
+. histogram scst_share //describe the distribution shape; note whether it is roughly uniform or concentrated at particular valu
+> es
+(bin=37, start=0, width=.02702703)
+
+. //bysort srcstatename: summarize scst_share //report variation in SC/ST employment share across states, noting which states h
+> ave the highest and lowest shares and whether this is consistent with known patterns of SC/ST population distribution
+. 
+. //right skewed with a spike at 1, making 1 the second highest frequency bin after soewhere near 0.3
+. 
+. *Constructing alternative outcome variables*
+. //Generate SC/ST job card share: 
+. gen scst_jobcard_share = (jobcardsissuedforscheduledcaste + jobcardsissuedforscheduledtribes) / jobcardsissued
+(50 missing values generated)
+
+. 
+. summ scst_jobcard_share, detail
+
+                     scst_jobcard_share
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%      .026091              0
+ 5%     .0826476              0
+10%     .1337884              0       Obs               6,318
+25%      .228552              0       Sum of wgt.       6,318
+
+50%     .3376365                      Mean           .4062966
+                        Largest       Std. dev.       .256932
+75%     .5135976              1
+90%     .8640049              1       Variance       .0660141
+95%     .9837266              1       Skewness       .9202021
+99%     .9987439              1       Kurtosis       2.974239
+
+. count if scst_jobcard_share > 1 | scst_jobcard_share < 0
+  50
+
+. 
+. *Checking data quality*
+. count if totalpersondays == 0 //report share of district-years with zero total person-days; these are potential data quality 
+> issues
+  115
+
+. count if missing(scst_share) //report missing values in the outcome variable
+  115
+
+. 
+. //Check for districts that appear in some years but not others: if the panel is unbalanced, report which states or years have
+>  gaps
+. * 1. Count how many rows (years) exist for each State-District combo
+. bysort srcstatename srcdistrictname: gen year_count = _N
+
+. 
+. * 2. List the names where the count is NOT 10
+. * We use 'tag' so we only see each district name once in the results
+. egen district_tag = tag(srcstatename srcdistrictname)
+
+. 
+. list srcstatename srcdistrictname year_count if district_tag == 1 & year_count != 10
+
+      +---------------------------------------------+
+      |      srcstatename   srcdistric~e   year_c~t |
+      |---------------------------------------------|
+1971. | JAMMU AND KASHMIR         KARGIL          9 |
+2020. | JAMMU AND KASHMIR   LEH (LADAKH)          9 |
+      +---------------------------------------------+
+
+. 
+. drop district_tag
+
+. drop year_count
+
+. 
+. 
+. 
+. **Key Numbers to Report in Your Write-Up**
+. 
+. //Compile these into a summary statistics table covering both datasets side by side where possible: number of observations, n
+> umber of unique units, years covered, mean and standard deviation of the SC/ST employment share (district level), mean and st
+> andard deviation of political competition, mean SC/ST population share, share of redistricted GPs (Nrega.dta only), share of 
+> GP-years with zero disbursements, and match rate between datasets if you attempt any merging. This table gives your reader a 
+> complete picture of what data you are working with before you present any regression results.
+. 
+. 
+. 
+. 
+. 
+. log close
+      name:  <unnamed>
+       log:  /Users/vidhi/college baby/sem 6/Topics in EconRes/FinalPaperMaterial/V2_EDA.log
+  log type:  text
+ closed on:  20 Mar 2026, 10:04:57
+-------------------------------------------------------------------------------------------------------------------------------
