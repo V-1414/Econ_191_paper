@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+\centering
+\caption{Summary Statistics}
+\label{tab:summary_stats}
+\small
+\begin{tabular}{lrrrrrr}
+\hline\hline
+\textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{SD} & \textbf{Min} & \textbf{Median} & \textbf{Max} \\
+\hline
+\multicolumn{7}{l}{\textit{A. Outcome Variables}} \\
+SC Targeting Ratio (raw) & 46,496 & 2.800 & 32.752 & 0.000 & 1.020 & 4397.718 \\
+ST Targeting Ratio (raw) & 18,563 & 1.045 & 0.930 & 0.001 & 0.955 & 17.884 \\
+SC+ST Targeting Ratio (raw) & 47,995 & 1.628 & 10.277 & 0.000 & 1.023 & 872.927 \\
+Log SC Targeting Ratio (winsorised) & 44,915 & -0.018 & 1.088 & -7.612 & 0.048 & 3.055 \\
+Log ST Targeting Ratio (winsorised) & 18,563 & -0.262 & 0.946 & -7.526 & -0.046 & 2.884 \\
+Log SC+ST Targeting Ratio (winsorised) & 47,995 & -0.040 & 0.894 & -7.742 & 0.023 & 2.100 \\
+\multicolumn{7}{l}{\textit{B. Treatment \& Identification}} \\
+Political Competition (EC, 2004) & 47,995 & 0.642 & 0.079 & 0.438 & 0.644 & 0.810 \\
+Political Competition (standardised) & 47,995 & -0.213 & 0.932 & -2.612 & -0.191 & 1.757 \\
+Reshuffled by Delimitation (=1) & 47,995 & 0.244 & 0.429 & 0.000 & 0.000 & 1.000 \\
+\multicolumn{7}{l}{\textit{C. Control Variables}} \\
+SC Population Share & 47,995 & 0.159 & 0.084 & 0.020 & 0.157 & 0.552 \\
+ST Population Share & 47,995 & 0.157 & 0.216 & 0.000 & 0.046 & 0.824 \\
+Children Under-6 Share & 47,995 & 0.163 & 0.029 & 0.101 & 0.161 & 0.227 \\
+Literacy Rate & 47,995 & 0.543 & 0.097 & 0.239 & 0.554 & 0.857 \\
+Poverty Headcount & 47,995 & 0.332 & 0.187 & 0.003 & 0.305 & 0.825 \\
+Rural Population & 47,995 & 1897917.661 & 334397.866 & 897425.000 & 1849283.000 & 4523487.000 \\
+Urbanisation Rate & 47,995 & 0.222 & 0.136 & 0.000 & 0.196 & 0.983 \\
+Primary School Available (=1) & 47,995 & 0.889 & 0.112 & 0.419 & 0.922 & 1.000 \\
+PHC Available (=1) & 47,995 & 0.046 & 0.040 & 0.000 & 0.037 & 0.747 \\
+Paved Road Available (=1) & 47,995 & 0.644 & 0.255 & 0.192 & 0.719 & 1.000 \\
+Electricity Available (=1) & 47,995 & 0.641 & 0.314 & 0.007 & 0.683 & 1.000 \\
+\hline\hline
+\multicolumn{7}{p{14cm}}{\footnotesize \textit{Notes:} Base sample: 47,995 GPs (14 states, non-missing treatment, controls, and at least one outcome). ST sub-sample: 18,563 GPs (additionally: ST rural population share $\geq$ 5\%). Raw targeting ratios are right-skewed; log forms winsorised at 1st--99th pct before log-transform.}
+\end{tabular}
+\end{table}

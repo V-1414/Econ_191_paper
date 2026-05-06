@@ -1,0 +1,20 @@
+\begin{table}[htbp]
+\centering
+\caption{Data Availability: Raw Datasets and Final Analysis Dataset}
+\label{tab:data_availability}
+\small
+\begin{tabular}{llllrrrll}
+\hline\hline
+\textbf{Dataset} & \textbf{Source} & \textbf{Unit of Obs.} & \textbf{Rows} & \textbf{Columns} & \textbf{Unique GPs} & \textbf{States} & \textbf{Years} & \textbf{Role} \\
+\hline
+nrega.dta & Kjelsrud (2024) & GP × year & 451,231 & 55 & 150,413 & 14 & 2011–2013 & Treatment, FE cell, controls \\
+gp\_id\_names.dta & Kjelsrud (2024) & GP & 151,660 & 5 & 151,660 & 14 & Cross-section & GP name strings for matching \\
+mis\_avg\_sc\_st\_data.csv & Mittal et al. & GP (by name) & 295,262 & 13 & 212,012 & 34 & Avg. 2011–2013 & SC/ST person-days (numerator) \\
+panchayat\_category.csv & Mittal et al. & GP (by name) & 127,696 & 12 & 100,360 & 31 & Cross-section & SC/ST population (denominator) \\
+pc11r\_shrid\_key.csv & SHRUG & SHRUG location (shrid2) & 597,597 & 7 & 588,978 & 35 & Cross-section & Numeric code → shrid crosswalk \\
+shrid\_loc\_names.csv & SHRUG & SHRUG location (shrid2) & 596,389 & 7 & 596,389 & 35 & Cross-section & shrid → string names crosswalk \\
+gp\_analysis\_dataset.csv & This paper (Section 15) & GP & 47,995 & 33 & 47,995 & 14 & Cross-section & Final analysis dataset \\
+\hline\hline
+\multicolumn{9}{p{18cm}}{\footnotesize \textit{Notes:} GP = Gram Panchayat. SHRUG = Socioeconomic High-resolution Rural-Urban Geographic dataset. Mittal et al. person-day data covers 2011--2013 MGNREGA records. The final analysis dataset is the result of merging all raw sources and applying sample restrictions (non-missing treatment, FE cell, nine controls, at least one outcome variable).}
+\end{tabular}
+\end{table}

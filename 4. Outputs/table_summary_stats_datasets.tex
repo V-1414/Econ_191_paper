@@ -1,0 +1,41 @@
+\begin{table}[htbp]
+\centering
+\caption{Summary Statistics by Dataset}
+\label{tab:summary_stats_datasets}
+\small
+\begin{tabular}{llrrrrrr}
+\hline\hline
+\textbf{Dataset} & \textbf{Variable} & \textbf{N} & \textbf{Mean} & \textbf{SD} & \textbf{Min} & \textbf{Median} & \textbf{Max} \\
+\hline
+\multicolumn{8}{l}{\textit{nrega.dta}} \\
+ & Political competition (EC) & 150,413 & 0.660 & 0.085 & 0.438 & 0.658 & 0.810 \\
+ & Reshuffled by delimitation & 150,413 & 0.269 & 0.444 & 0.000 & 0.000 & 1.000 \\
+ & Under-6 population share & 150,413 & 0.168 & 0.030 & 0.101 & 0.169 & 0.227 \\
+ & Literacy rate & 150,413 & 0.529 & 0.103 & 0.239 & 0.540 & 0.857 \\
+ & Poverty headcount & 150,413 & 0.337 & 0.178 & 0.003 & 0.339 & 0.825 \\
+\hline
+\multicolumn{8}{l}{\textit{mis\_avg\_sc\_st\_data.csv}} \\
+ & SC person-days (emp\_provided\_household\_sc) & 295,262 & 39.114 & 93.080 & 0.000 & 13.857 & 3503.571 \\
+ & ST person-days (emp\_provided\_household\_st) & 295,262 & 30.101 & 93.554 & 0.000 & 0.286 & 8803.429 \\
+\hline
+\multicolumn{8}{l}{\textit{panchayat\_category.csv}} \\
+ & SC population & 127,696 & 609.962 & 1152.032 & 0.000 & 296.000 & 31264.000 \\
+ & ST population & 127,696 & 425.376 & 948.232 & 0.000 & 33.000 & 38600.000 \\
+\hline
+\multicolumn{8}{l}{\textit{gp\_analysis\_dataset.csv}} \\
+ & Political competition (std.) & 47,995 & -0.213 & 0.932 & -2.612 & -0.191 & 1.757 \\
+ & Log SC targeting ratio & 44,915 & -0.018 & 1.088 & -7.612 & 0.048 & 3.055 \\
+ & Log ST targeting ratio & 28,005 & -0.057 & 1.315 & -7.526 & -0.025 & 4.090 \\
+ & Log SC+ST targeting ratio & 47,995 & -0.040 & 0.894 & -7.742 & 0.023 & 2.100 \\
+ & SC targeting ratio (raw) & 46,496 & 2.800 & 32.752 & 0.000 & 1.020 & 4397.718 \\
+ & ST targeting ratio (raw) & 33,451 & 4.006 & 39.422 & 0.000 & 0.866 & 2687.257 \\
+ & SC+ST targeting ratio (raw) & 47,995 & 1.628 & 10.277 & 0.000 & 1.023 & 872.927 \\
+ & Under-6 population share & 47,995 & 0.163 & 0.029 & 0.101 & 0.161 & 0.227 \\
+ & Literacy rate & 47,995 & 0.543 & 0.097 & 0.239 & 0.554 & 0.857 \\
+ & Poverty headcount & 47,995 & 0.332 & 0.187 & 0.003 & 0.305 & 0.825 \\
+ & Log rural population & 47,995 & 14.442 & 0.167 & 13.707 & 14.430 & 15.325 \\
+ & Urbanisation rate & 47,995 & 0.222 & 0.136 & 0.000 & 0.196 & 0.983 \\
+\hline\hline
+\multicolumn{8}{p{14cm}}{\footnotesize \textit{Notes:} For nrega.dta, statistics are computed at the GP level (de-duplicated on gp\_id). For mis\_avg\_sc\_st\_data.csv and panchayat\_category.csv, all rows are used. For gp\_analysis\_dataset.csv, statistics are over the 47{,}995-GP base sample; outcome variables have fewer non-missing observations due to name-matching constraints.}
+\end{tabular}
+\end{table}
